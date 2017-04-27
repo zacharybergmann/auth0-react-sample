@@ -1,11 +1,9 @@
 import React, { PropTypes as T } from 'react'
 import {Button} from 'react-bootstrap'
 import AuthService from 'utils/AuthService'
-import ProfileDetails from 'components/Profile/ProfileDetails'
-import ProfileEdit from 'components/Profile/ProfileEdit'
 import styles from './styles.module.css'
 
-export class Home extends React.Component {
+export class Profile extends React.Component {
   static contextTypes = {
     router: T.object
   }
@@ -33,13 +31,12 @@ export class Home extends React.Component {
     const { profile } = this.state
     return (
       <div className={styles.root}>
-        <h2>Home</h2>
-        <ProfileDetails profile={profile}></ProfileDetails>
-        <ProfileEdit profile={profile} auth={this.props.auth}></ProfileEdit>
+        <h2>Profile</h2>
+        <p>Welcome {profile.name}!</p>
         <Button onClick={this.logout.bind(this)}>Logout</Button>
       </div>
     )
   }
 }
 
-export default Home;
+export default Profile;

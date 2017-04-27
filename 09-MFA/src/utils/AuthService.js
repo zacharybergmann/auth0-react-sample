@@ -6,6 +6,7 @@ import { browserHistory } from 'react-router'
 export default class AuthService extends EventEmitter {
   constructor(clientId, domain) {
     super()
+    console.log('asdfasdfdsfasdfsda');
     // Configure Auth0
     this.lock = new Auth0Lock(clientId, domain, {
       auth: {
